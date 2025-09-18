@@ -1,0 +1,11 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.panel {
+  background-color: #1e1e2e;
+  padding: 6px;
+  border-radius: 8px;
+}
