@@ -8,8 +8,9 @@
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: #d2d3d8;
+    background: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    
 }
 
 #workspaces button {
@@ -35,7 +36,7 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background: #cdd6f4;
+    background: #6a01e2;
     color: #11111b; 
     border-radius: 10px;
 }
@@ -50,7 +51,7 @@ window#waybar {
 #workspaces,
 #tray,
 #backlight {
-    background: #1c1c1c; /*Fondo de cada seccion de la barra*/
+    background: #141414; /*Fondo de cada seccion de la barra*/
     padding: 0px 10px;
     margin: 3px 0px;
     margin-top: 5px;
