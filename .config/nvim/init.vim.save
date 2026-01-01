@@ -1,0 +1,95 @@
+" Basic Configurations
+" FernuDev Github - https://github.com/Fernu292
+
+set number
+set mouse=a
+syntax enable
+set showcmd
+set encoding=utf-8
+set showmatch
+
+
+set expandtab
+set tabstop=4
+set shiftwidth=0
+set softtabstop=0
+set autoindent
+set smarttab
+
+call plug#begin()
+    Plug 'tanvirtin/monokai.nvim'
+    Plug 'nyoom-engineering/oxocarbon.nvim'
+    Plug 'bluz71/vim-moonfly-colors'
+    Plug 'amirrezaask/cyberpunk.nvim'
+    Plug 'thedenisnikulin/vim-cyberpunk'
+    Plug 'ayaz-amin/cyberpunk.nvim'
+    Plug 'glepnir/dashboard-nvim'
+    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'navarasu/onedark.nvim'
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+    Plug 'folke/tokyonight.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-tree/nvim-tree.lua'
+    Plug 'tpope/vim-fugitive'
+    " Plugins para apuntes y Markdown
+    Plug 'preservim/vim-markdown'
+    Plug 'junegunn/goyo.vim'
+    Plug 'lukas-reineke/headlines.nvim'
+    Plug 'vimwiki/vimwiki'
+    Plug 'rebelot/kanagawa.nvim'
+    Plug 'ellisonleao/gruvbox.nvim'
+    Plug 'shaunsingh/nord.nvim'
+    Plug 'rose-pine/neovim'
+    Plug 'Mofiqul/vscode.nvim'
+    Plug 'mcchrish/zenbones.nvim'
+    Plug 'EdenEast/nightfox.nvim'
+    Plug 'sainnhe/everforest'
+    Plug 'dylanaraps/wal.vim'
+    Plug 'adigitoleo/vim-mellow'
+    Plug 'ingenarel/cyberpunk-neon.nvim'
+    Plug 'scottmckendry/cyberdream.nvim'
+call plug#end()
+
+lua require('dashboard_config')
+
+" Calling the Lualine pluggin
+colorscheme monokai
+
+hi Normal guibg=none
+hi NormalNC guibg=none
+hi SignColumn guibg=none
+hi NormalFloat guibg=none
+hi FloatBorder guibg=none
+hi LineNr guibg=none
+hi CursorLineNr guibg=none
+hi EndOfBuffer guibg=none
+
+
+
+lua << END
+require('nvim-tree').setup {
+  view = {
+    width = 30,
+    side = 'left',
+    preserve_window_proportions = true,
+  },
+  renderer = {
+    icons = {
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+        git = true,
+      },
+    },
+  },
+  filters = {
+    dotfiles = false,
+  },
+}
+-- Atajo para abrir/cerrar el navegador
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
+END
