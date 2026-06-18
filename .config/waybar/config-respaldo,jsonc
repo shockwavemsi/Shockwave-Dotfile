@@ -39,7 +39,7 @@
     },
 
 "clock": {
-    "format": "{:%H:%M}",
+    "format": "{:%d-%m-%Y %H:%M}",
     "interval": 60,
     "rotate": 0,
     "tooltip-format": "<tt>{calendar}</tt>",
@@ -59,7 +59,7 @@
 
     "backlight": {
         "device": "intel_backlight",
-        "format": "{icon}   {percent}",
+        "format": "{icon} {percent}%",
         "format-icons": ["󰃞", "󰃟", "󰃠"],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-",
@@ -72,7 +72,7 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon}  {capacity}",
+        "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
@@ -80,7 +80,7 @@
     },
 
     "pulseaudio": {
-        "format": "{icon}    {volume}",
+        "format": "{icon}  {volume}%",
         "tooltip": false,
         "format-muted": "  Muted",
         "on-click": "pamixer -t",
@@ -100,8 +100,8 @@
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": "  {volume}",
-        "format-source-muted": "    Muted",
+        "format-source": " {volume}%",
+        "format-source-muted": "  Muted",
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
@@ -115,30 +115,30 @@
             "m": 30 // medium
         },
         "interval": 10,
-        "format": "󰾆   {used}GB",
-        "format-m": "󰾅   {used}GB",
-        "format-h": "󰓅   {used}GB",
-        "format-c": "   {used}GB",
-        "format-alt": "󰾆   {percentage}%",
+        "format": "󰾆 {used}GB",
+        "format-m": "󰾅 {used}GB",
+        "format-h": "󰓅 {used}GB",
+        "format-c": " {used}GB",
+        "format-alt": "󰾆 {percentage}%",
         "max-length": 10,
         "tooltip": true,
-        "tooltip-format": "󰾆   {percentage}%\n   {used:0.1f}GB/{total:0.1f}GB"
+        "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
     },
 
     "cpu": {
         "interval": 10,
-        "format": "󰍛   {usage}%",
+        "format": "󰍛 {usage}%",
         "format-alt": "{icon0}{icon1}{icon2}{icon3}",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     },
 
     "network": {
         "tooltip": true,
-        "format-wifi": "    {essid}",
-        "format-ethernet": "󰈀   ",
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀 ",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-        "format-linked": "󰈀   {ifname} (No IP)",
-        "format-disconnected": "󰖪   ",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
         "tooltip-format-disconnected": "Disconnected",
         "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "interval": 2

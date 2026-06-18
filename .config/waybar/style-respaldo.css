@@ -1,0 +1,137 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Rubik,JetBrainsMono Nerd Font, monospace;
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 0;
+    transition: none;
+}
+
+window#waybar {
+    background: rgba(10, 10, 10, 0.95);
+    color: #e0e0e0;
+    border-bottom: 1px solid #333333;
+}
+
+/* WORKSPACES - Minimalista */
+#workspaces {
+    background: transparent;
+    margin-left: 10px;
+    padding: 0;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #666666;
+    background: transparent;
+    border-radius: 0;
+    margin: 0 2px;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+#workspaces button.urgent {
+    color: #ff6b6b;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+    background: transparent;
+    box-shadow: inset 0 -2px 0 #ffffff;
+}
+
+/* MÓDULOS - Estilo uniforme */
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#backlight,
+#tray {
+    background: transparent;
+    padding: 0 15px;
+    margin: 4px 0;
+    color: #b0b0b0;
+    border-right: 1px solid #333333;
+}
+
+/* Eliminar bordes duplicados */
+#network {
+    border-right: 1px solid #333333;
+}
+
+#pulseaudio {
+    border-right: 1px solid #333333;
+}
+
+#pulseaudio.microphone {
+    border-right: none;
+}
+
+#battery {
+    border-right: none;
+    margin-right: 10px;
+}
+
+#tray {
+    border-right: none;
+    border-left: 1px solid #333333;
+    padding: 0 10px;
+}
+
+#clock {
+    color: #ffffff;
+    font-weight: bold;
+    border-right: 1px solid #333333;
+}
+
+/* Último elemento antes del tray */
+#battery {
+    border-right: none;
+}
+
+/* ESTADOS ESPECIALES - Sutil */
+#battery.critical:not(.charging) {
+    color: #ff6b6b;
+}
+
+#network.disconnected {
+    color: #666666;
+}
+
+#pulseaudio.muted {
+    color: #666666;
+}
+
+#cpu.warning {
+    color: #ffb86b;
+}
+
+#memory.warning {
+    color: #ffb86b;
+}
+
+/* VENTANA ACTIVA - Destacado sutil */
+#window {
+    color: #ffffff;
+    font-weight: normal;
+    border-right: 1px solid #333333;
+}
+
+/* HOVER en módulos */
+#clock:hover,
+#battery:hover,
+#pulseaudio:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#backlight:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
